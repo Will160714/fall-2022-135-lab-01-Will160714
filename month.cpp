@@ -14,10 +14,14 @@ int main(){
     if(month == 1 || month == 3 || month == 5 || month == 8 || month == 10 || month == 12)
         std::cout << "31 days" << std::endl;
     else if(month == 2){
-        if(year % 4 == 0 && year % 100 == 0 && year % 400 == 0)
-            std::cout << "29 days" << std::endl;
-        else
+        if(year % 4 != 0)
             std::cout << "28 days" << std::endl;
+        else if(year % 100 != 0)
+            std::cout << "29 days" << std::endl;
+        else if(year % 400 != 0)
+            std::cout << "28 days" << std::endl;
+        else
+            std::cout << "29 days" << std::endl; 
     }
     else
         std::cout << "30 days" << std::endl;
